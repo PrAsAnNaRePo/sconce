@@ -243,11 +243,11 @@ class PerformanceEval:
                 table_data["mac"].append("*")
                 pass
             else:
-                try:
+                # try:
                     mac = self.get_model_macs(model, dummy_input)
                     table_data["mac"].append(round(mac / 1e6))
-                except AttributeError as e:
-                    table_data["mac"].append("-")
+                # except AttributeError as e:
+                #     table_data["mac"].append("-")
             
             ########################################
             

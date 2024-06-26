@@ -288,20 +288,6 @@ class Sconce:
 			
 			return
 	
-	########## Model Profiling ##########
-	def get_model_macs(self, model, inputs) -> int:
-		"""
-		Calculates the number of multiply-accumulate operations (MACs) required to run the given model with the given inputs.
-
-		Args:
-		  model: The model to profile.
-		  inputs: The inputs to the model.
-
-		Returns:
-		  The number of MACs required to run the model with the given inputs.
-		"""
-		return profile_macs(model, inputs)
-	
 	def save_torchscript_model(self, model, model_dir, model_filename):
 		if not os.path.exists(model_dir):
 			os.makedirs(model_dir)
